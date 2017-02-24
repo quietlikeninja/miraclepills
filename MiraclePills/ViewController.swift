@@ -12,6 +12,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
+    @IBOutlet weak var buyNowBtn: UIButton!
+    @IBOutlet weak var countryField: UITextField!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var postcodeField: UITextField!
+    @IBOutlet weak var postcodeLabel: UILabel!
     
     let states = ["ACT","NSW","NT","QLD","SA","TAS","VIC","WA"]
     
@@ -28,6 +33,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBAction func stateBtnPressed(_ sender: Any) {
         statePicker.isHidden = false
+        countryField.isHidden = true
+        countryLabel.isHidden = true
+        postcodeField.isHidden = true
+        postcodeLabel.isHidden = true
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -45,6 +54,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(states[row], for: UIControlState.normal)
         statePicker.isHidden = true
+        countryField.isHidden = false
+        countryLabel.isHidden = false
+        postcodeField.isHidden = false
+        postcodeLabel.isHidden = false
     }
+    
+    @IBAction func buyNowBtnPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "success", sender: self)
+    }
+    
 }
 
