@@ -184,6 +184,13 @@
                                     <action selector="buyNowBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Udh-zn-VsS"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="52t-oc-XVD">
+                                <rect key="frame" x="98" y="243" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="OHE-5Q-Q9p"/>
+                                    <constraint firstAttribute="height" constant="180" id="RIs-tU-hvh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -194,6 +201,7 @@
                             <constraint firstItem="JTZ-2A-79S" firstAttribute="top" secondItem="3HM-b4-m7a" secondAttribute="bottom" constant="8" id="5ZH-GY-aVh"/>
                             <constraint firstItem="VrC-hm-7a8" firstAttribute="centerX" secondItem="8T3-Eg-U1p" secondAttribute="centerX" id="66o-mf-vtb"/>
                             <constraint firstItem="VrC-hm-7a8" firstAttribute="top" secondItem="8T3-Eg-U1p" secondAttribute="bottom" constant="8" id="6X6-1g-h5o"/>
+                            <constraint firstItem="52t-oc-XVD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AWT-fc-Ibk"/>
                             <constraint firstItem="8fW-lC-e1i" firstAttribute="top" secondItem="TCx-HT-RPz" secondAttribute="bottom" constant="8" id="AbR-hM-dTp"/>
                             <constraint firstItem="1pN-Mi-2jH" firstAttribute="top" secondItem="8fW-lC-e1i" secondAttribute="bottom" constant="8" id="Cb7-in-ejt"/>
                             <constraint firstItem="nm2-oG-xbI" firstAttribute="leading" secondItem="0Ys-lW-2dw" secondAttribute="leading" id="DxU-Gm-Qea"/>
@@ -223,6 +231,7 @@
                             <constraint firstItem="gHO-rk-u6f" firstAttribute="leading" secondItem="hQK-gt-7io" secondAttribute="leading" id="hbg-8Q-uJf"/>
                             <constraint firstItem="bLS-bP-rCK" firstAttribute="trailing" secondItem="1pN-Mi-2jH" secondAttribute="trailing" id="iAV-O4-btg"/>
                             <constraint firstItem="0Ys-lW-2dw" firstAttribute="trailing" secondItem="bLS-bP-rCK" secondAttribute="trailing" id="lIZ-Hq-gRu"/>
+                            <constraint firstItem="52t-oc-XVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o26-w5-oFF"/>
                             <constraint firstItem="TCx-HT-RPz" firstAttribute="top" secondItem="ven-VU-nAN" secondAttribute="bottom" constant="8" id="oIe-uG-Odl"/>
                             <constraint firstItem="gHO-rk-u6f" firstAttribute="trailing" secondItem="hQK-gt-7io" secondAttribute="trailing" id="oPI-ER-6Ll"/>
                             <constraint firstItem="1v5-cm-tBx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="otd-cU-Zra"/>
@@ -239,50 +248,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buyNowBtn" destination="JTZ-2A-79S" id="p9o-hQ-6kn"/>
                         <outlet property="countryField" destination="gHO-rk-u6f" id="USe-3y-Vll"/>
                         <outlet property="countryLabel" destination="hQK-gt-7io" id="hCK-1D-wxn"/>
                         <outlet property="postcodeField" destination="3HM-b4-m7a" id="BJe-cj-EwL"/>
                         <outlet property="postcodeLabel" destination="9fP-Jc-1Uy" id="OYg-wY-1Xx"/>
                         <outlet property="statePicker" destination="lL6-ch-cpP" id="sgJ-pE-qdP"/>
                         <outlet property="statePickerBtn" destination="nm2-oG-xbI" id="enN-De-YU4"/>
-                        <segue destination="hYs-TS-79a" kind="show" identifier="success" id="NGj-fQ-EGk"/>
+                        <outlet property="successImageView" destination="52t-oc-XVD" id="iHY-OZ-h3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="138.0809595202399"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="35l-Yt-eHs">
-            <objects>
-                <viewController id="hYs-TS-79a" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zJJ-UI-hAL"/>
-                        <viewControllerLayoutGuide type="bottom" id="jDX-l1-dQy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7WI-jy-lDe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="52t-oc-XVD">
-                                <rect key="frame" x="97.5" y="243.5" width="180" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="OHE-5Q-Q9p"/>
-                                    <constraint firstAttribute="height" constant="180" id="RIs-tU-hvh"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="52t-oc-XVD" firstAttribute="centerY" secondItem="7WI-jy-lDe" secondAttribute="centerY" id="O06-2y-MmT"/>
-                            <constraint firstItem="52t-oc-XVD" firstAttribute="centerX" secondItem="7WI-jy-lDe" secondAttribute="centerX" id="pqu-vF-h47"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eM5-pS-Ipy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="842.39999999999998" y="135.38230884557723"/>
         </scene>
     </scenes>
     <resources>

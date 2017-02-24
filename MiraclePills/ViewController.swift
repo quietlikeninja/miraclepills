@@ -12,11 +12,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
-    @IBOutlet weak var buyNowBtn: UIButton!
     @IBOutlet weak var countryField: UITextField!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var postcodeField: UITextField!
     @IBOutlet weak var postcodeLabel: UILabel!
+    @IBOutlet weak var successImageView: UIImageView!
     
     let states = ["ACT","NSW","NT","QLD","SA","TAS","VIC","WA"]
     
@@ -61,7 +61,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBAction func buyNowBtnPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "success", sender: self)
+        
+        for view in self.view.subviews as [UIView]{
+            view.isHidden = true
+        }
+        successImageView.isHidden = false
     }
     
 }
